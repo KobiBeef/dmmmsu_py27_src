@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}registration/login.html{% endblock %}
+{% block body_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+	<h1>django-registration-redux Login</h1>
+	<form class="form-signin " role="form" method="post" action=".">
+		{% csrf_token %}
+		<!-- {# form.as_p #} -->
+		<h2 class="form-signin-heading">Sign In</h2>
+		<input class="form-control" placeholder="Username" id="id_username" maxlength="254" name="username" type="text" required autofocus="" />
+		<input class="form-control" placeholder="Password" id="id_password" name="password" type="password" required />
+		<!-- <input type="password" class="form-contorl" placeholder="Password" id="id_password" name="password" value="{# next #}"> -->
+		<button class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">Sign in</button>
+	<p>Not a member?<a href="{% url 'registration_register' %}">Register</a>!</p>
+	</form>
+{% endblock %}

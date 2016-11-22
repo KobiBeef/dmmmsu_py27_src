@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Student Registry</title>
+	</head>
+	<body>
+		<h1>HELLO WORLD!</h1><br/>
+		{% if categories %}
+			<ul>
+			<p>url for view category()</p>
+			{% for category in categories %}
+				<li><a href="/student_registry/category/{{ category.slug }}/">{{ category.name }}</a></li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<strong>no categories present</strong><br/>
+		{% endif %}
+
+		{% if categories %}
+			<ul>
+			<p>url for view category_test()</p>
+			{% for category in categories %}
+				<li><a href="/student_registry/category_test/{{ category.slug }}/">{{ category.name }}</a></li>
+			{% endfor %}
+			</ul>
+		{% else %}
+			<strong>no categories present</strong><br/>
+		{% endif %}
+		<a href="/student_registry/about/">ABOUT</a><br/>
+		<a href="/student_registry/add_category/">ADD A NEW CATEGORY</a><br/>
+		<img src="{% static 'images/dog-index.jpg' %}">
+	</body>
+</html>

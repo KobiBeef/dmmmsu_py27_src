@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{%load staticfiles %}
+{% block title%}student_registry/login.html{% endblock %}
+{% block body_block %}
+<link rel="stylesheet" type="text/css" href="{% static css/signin.css %}">
+	<h1>Login</h1>
+	<form id="login_form" method="post" action="/student_registry/login/">
+	{% csrf_token %}
+	Username: <input type="text" name="username" value="" size="50"><br/>
+	Password: <input type="password" name="password" value="" size="50"><br/>
+	<input type="submit" name="submit" value="Login">
+	</form>
+{% endblock %}
